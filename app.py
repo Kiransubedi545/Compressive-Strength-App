@@ -10,6 +10,13 @@ scaler = joblib.load("scaler.pkl")
 st.set_page_config(page_title="Concrete Strength Predictor", layout="centered")
 st.title("🔨 Concrete Compressive Strength Predictor")
 
+# About Section
+st.markdown("""
+### 🧱 About This App
+This appplication predicts the **compressive strength of concrete** (in MPa) using a trained LightGBM machine learning model.  
+Input the mix proportions of your concrete design, and get a strength estimate based on historical data.
+""")
+
 st.markdown("Enter your concrete mix details:")
 
 # Inputs
@@ -31,4 +38,8 @@ if st.button("Predict Strength"):
     scaled = scaler.transform(df)
     prediction = model.predict(scaled)[0]
     st.success(f"Predicted Compressive Strength: {prediction:.2f} MPa")
+
+# Footer
+st.markdown("---")
+st.caption("👷‍♂️ Developed by Kiran Subedi | Website: https://kiransubedi545.com.np/ | Email: Kiransubedi545@gmail.com")
 
