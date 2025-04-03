@@ -17,7 +17,7 @@ This appplication predicts the **compressive strength of concrete** (in MPa) usi
 Input the mix proportions of your concrete design, and get a strength estimate based on historical data.
 """)
 
-st.markdown("Enter your concrete mix details:")
+st.markdown("**Enter your concrete mix details:**")
 
 # Inputs
 cement = st.number_input("Cement (kg/m³)", 0.0, 1000.0, 150.0)
