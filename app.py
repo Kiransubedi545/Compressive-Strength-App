@@ -24,9 +24,10 @@ age = st.number_input("Age (days)", 1, 365, 28)
 
 if st.button("Predict Strength"):
     df = pd.DataFrame([[cement, slag, fly_ash, water, superplasticizer,
-                        coarse_agg, fine_agg, age]],
-                      columns=["Cement", "Blast Furnace Slag", "Fly Ash", "Water",
-                               "Superplasticizer", "Coarse Aggregate", "Fine Aggregate", "Age"])
+                    coarse_agg, fine_agg, age]],
+                  columns=["Cement", "Blast Furnace Slag", "Fly Ash", "Water",
+                           "Superplasticizer", "Coarse Aggregate", "Fine Aggregate", "Age"])
+
     scaled = scaler.transform(df)
     prediction = model.predict(scaled)[0]
     st.success(f"Predicted Compressive Strength: {prediction:.2f} MPa")
