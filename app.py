@@ -15,8 +15,7 @@ tab1, tab2 = st.tabs(["🔍 Compressive Strength Prediction", "🧮 Compressive 
 
 # --- Tab 1: ML-Based Prediction ---
 with tab1:
-# About Section
-st.markdown("""
+    st.markdown(""" 
 ### 🧱 About This App
 This appplication predicts the **compressive strength of concrete** (in MPa) using a trained LightGBM machine learning model.  
 Input the mix proportions of your concrete design, and get a strength estimate based on historical data.
