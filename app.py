@@ -69,13 +69,14 @@ with tab2:
     load = st.number_input("Applied Load (kN)", min_value=0.0, value=100.0)
     side_length = st.number_input("Cube Side Length (mm)", min_value=50.0, value=150.0)
 
-    if side_length > 0:
+    if st.button("Calculate Strength"):
         area_mm2 = side_length ** 2
         area_m2 = area_mm2 / 1_000_000
         strength_calc = (load * 1000) / area_mm2
 
         st.write(f"📐 Cube Area: {area_mm2:.0f} mm² ({area_m2:.4f} m²)")
         st.success(f"Calculated Compressive Strength: {strength_calc:.2f} MPa")
+
 
     st.markdown("---")
     st.caption("👷‍♂️ Developed by Kiran Subedi | Website: https://kiransubedi545.com.np/ | Email: Kiransubedi545@gmail.com")
