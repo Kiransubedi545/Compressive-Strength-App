@@ -10,6 +10,11 @@ scaler = joblib.load("scaler.pkl")
 st.set_page_config(page_title="Concrete Strength Predictor", layout="centered")
 st.title("🔨 Concrete Compressive Strength Predictor")
 
+# Create tabs
+tab1, tab2 = st.tabs(["🔍 Compressive Strength Prediction", "🧮 Compressive Strength Calculation"])
+
+# --- Tab 1: ML-Based Prediction ---
+with tab1:
 # About Section
 st.markdown("""
 ### 🧱 About This App
@@ -38,6 +43,24 @@ if st.button("Predict Strength"):
     scaled = scaler.transform(df)
     prediction = model.predict(scaled)[0]
     st.success(f"Predicted Compressive Strength: {prediction:.2f} MPa")
+
+# --- Tab 2: Manual Load-Based Calculation ---
+with tab2:
+    st.markdown("""
+    ### 🧮 Compressive Strength by Load and Area
+    Calculate compressive strength using applied load and cube dimensions.
+    """)
+
+    load = st.number_input("Applied Load (kN)", min_value=0.0, value=100.0)
+    side_length = st.number_input("Cube Side Length (mm)", min_value=50.0, value=150.0)
+
+    if side_length > 0:
+        area_mm2 = side_length ** 2
+        area_m2 = area_mm2 / 1_000_000  # convert to m²
+        strength_calc = (load * 1000) / area_mm2  # MPa = N/mm²
+
+        st.write(f"📐 Cube Area: {area_mm2:.0f} mm² ({area_m2:.4f} m²)")
+        st.success(f"Calculated Compressive Strength: {strength_calc:.2f} MPa")
 
 # Footer
 st.markdown("---")
