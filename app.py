@@ -15,7 +15,7 @@ st.markdown("Enter your concrete mix details:")
 # Inputs
 cement = st.number_input("Cement (kg/m³)", 0.0, 1000.0, 150.0)
 slag = st.number_input("Blast_Furnace_Slag (kg/m³)", 0.0, 300.0, 0.0)
-fly_ash = st.number_input("Fly_Ash (kg/m³)", 0.0, 300.0, 0.0)
+fly_ash = st.number_input(" Fly_Ash (kg/m³)", 0.0, 300.0, 0.0)
 water = st.number_input("Water (kg/m³)", 0.0, 300.0, 150.0)
 superplasticizer = st.number_input("Superplasticizer (kg/m³)", 0.0, 50.0, 5.0)
 coarse_agg = st.number_input("Coarse_Aggregate (kg/m³)", 0.0, 1200.0, 900.0)
