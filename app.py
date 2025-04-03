@@ -66,7 +66,7 @@ with tab2:
     Input the applied load on concrete during testing, and get compressive strength.
     """)
 
-    load = st.number_input("Applied Load (kN)", min_value=0.0, value=100.0)
+    load = st.number_input("Applied Load (kN)", min_value=0.0, value=450.0)
     side_length = st.number_input("Cube Side Length (mm)", min_value=50.0, value=150.0)
 
     if st.button("Calculate Strength"):
