@@ -10,6 +10,44 @@ scaler = joblib.load("scaler.pkl")
 st.set_page_config(page_title="Concrete Strength Predictor", layout="Centered")
 st.title("🔨 Concrete Compressive Strength Predictor")
 
+# Font and spacing styling
+st.markdown("""
+<style>
+html, body, [class*="css"] {
+    font-size: 18px;
+}
+
+h1 {
+    font-size: 38px !important;
+}
+
+h2, h3, h4 {
+    font-size: 26px !important;
+}
+
+label, p, div {
+    font-size: 18px !important;
+}
+
+button {
+    font-size: 18px !important;
+}
+
+button[data-baseweb="tab"] {
+    font-size: 18px !important;
+}
+
+.main .block-container {
+    max-width: 1200px;
+    padding-top: 2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+</style>
+""", unsafe_allow_html=True)
+
+st.title("🔨 Concrete Compressive Strength Predictor")
+
 # Inject custom tab styling
 st.markdown("""
 <style>
@@ -21,22 +59,6 @@ st.markdown("""
     background-color: #fff0f5;
     border-radius: 10px 10px 0 0;
 }
-</style>
-st.markdown("""
-<style>
-
-html, body, [class*="css"] {
-    font-size:18px;
-}
-
-h1 {
-    font-size:40px !important;
-}
-
-button[data-baseweb="tab"] {
-    font-size:18px !important;
-}
-
 </style>
 """, unsafe_allow_html=True)
 # Create tabs
