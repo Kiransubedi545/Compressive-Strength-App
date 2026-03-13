@@ -8,7 +8,7 @@ model = joblib.load("lightgbm_model.pkl")
 scaler = joblib.load("scaler.pkl")
 
 st.set_page_config(page_title="Concrete Strength Predictor", layout="centered")
-st.title("🔨 Concrete Compressive Strength Predictor")
+
 
 # Font and spacing styling
 st.markdown("""
