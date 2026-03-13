@@ -7,7 +7,7 @@ import joblib
 model = joblib.load("lightgbm_model.pkl")
 scaler = joblib.load("scaler.pkl")
 
-st.set_page_config(page_title="Concrete Strength Predictor", layout="wide")
+st.set_page_config(page_title="Concrete Strength Predictor", layout="Centered")
 st.title("🔨 Concrete Compressive Strength Predictor")
 
 # Inject custom tab styling
@@ -22,8 +22,23 @@ st.markdown("""
     border-radius: 10px 10px 0 0;
 }
 </style>
-""", unsafe_allow_html=True)
+st.markdown("""
+<style>
 
+html, body, [class*="css"] {
+    font-size:18px;
+}
+
+h1 {
+    font-size:40px !important;
+}
+
+button[data-baseweb="tab"] {
+    font-size:18px !important;
+}
+
+</style>
+""", unsafe_allow_html=True)
 # Create tabs
 tab1, tab2 = st.tabs(["🔍 Compressive Strength Prediction", "🧮 Compressive Strength Calculation"])
 
