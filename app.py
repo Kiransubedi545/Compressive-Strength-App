@@ -7,7 +7,7 @@ import joblib
 model = joblib.load("lightgbm_model.pkl")
 scaler = joblib.load("scaler.pkl")
 
-st.set_page_config(page_title="Concrete Strength Predictor", layout="centered")
+st.set_page_config(page_title="Concrete Strength Predictor", layout="wide")
 st.title("🔨 Concrete Compressive Strength Predictor")
 
 # Inject custom tab styling
